@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>teo timer</title>
+</head>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.1/jquery.fittext.min.js
+"></script>
+<script src="teo_timer.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Orbitron:700' rel='stylesheet' type='text/css'>
+<style type="text/css" media="screen">
+/* <![CDATA[ */
+body {
+  background-color: black;
+  font-family:
+   "ヒラギノ明朝 ProN W6",
+   "HiraMinProN-W6",
+   "HG明朝E",
+   "ＭＳ Ｐ明朝",
+   "MS PMincho",
+   "MS 明朝",
+   serif;
+   font-weight: bold;
+   font-size: 3em;
+   color: lime;
+}
+h1 span {
+  font-size: 0.5em;
+}
+#teo-timer {
+  width: 96%;
+}
+#console {
+  width: 96%;
+}
+.color-border {
+  border:solid 0.3rem lime;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+.timer-prefix {
+  vertical-align: top;
+}
+.timer{
+  font-size: 1.5em;
+  font-family: 'Orbitron', sans-serif;
+}
+.console-ja {
+  font-size: 1.5em;
+}
+.methods {
+  display: box;
+	display: -webkit-box;
+	display: -moz-box;
+
+  box-pack:justify;
+  -webkit-box-pack:justify;
+  -moz-box-pack:justify;
+}
+.method {
+  width: 25%;
+}
+.blinking{
+    -webkit-animation:blink 0.2s ease-in-out infinite alternate;
+    -moz-animation:blink 0.2s ease-in-out infinite alternate;
+    animation:blink 0.2s ease-in-out infinite alternate;
+}
+@-webkit-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@-moz-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+/* ]]> */
+</style>
+<body>
+  <h1 id="title" class="fit-text">炎王龍 <span>Teostra</span></h1>
+  <div>
+    <div id="teo-timer" class="color-border">
+      <div class="fit-text">
+        <div>臨界点突破まで</div>
+        <div class="timer-field">
+          <span class="timer-prefix">あと</span>
+          <span class="timer">
+            <span id="second">00</span>:<span id="ms">000</span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div id="console" class="color-border">
+      <div class="fit-text">
+        <div class="console-ja">解除方法</div>
+        <div>DIACTIVATE</div>
+        <div class="methods">
+          <div class="method color-border">対象殺害</div>
+          <div class="method color-border">部位破壊</div>
+          <div class="method color-border">乗り成功</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
