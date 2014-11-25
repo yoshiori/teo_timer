@@ -1,9 +1,14 @@
 LIMIT_TIME = 100 * 1000
 
 $ ->
+  init()
   $(".fit-text").fitText()
   $(document).on "click touchstart", ->
     toggle()
+
+init = ->
+  @sound = new Audio("warning.mp3")
+  @sound.loop = true
 
 toggle = ->
   if @timer
@@ -23,6 +28,7 @@ stop = ->
   $("#ms").text("000")
   setColor("lime")
   $(document.body).removeClass("blinking")
+  @sound.pause()
 
 step = ->
   time = LIMIT_TIME - (new Date() - @startTime)
@@ -35,6 +41,9 @@ step = ->
 
   if time < 10 * 1000
     $(document.body).addClass("blinking")
+    if @sound.paused
+      @sound.load()
+      @sound.play()
 
   second = Math.floor(time / 1000)
   ms = zeroPadding(time % 1000)
