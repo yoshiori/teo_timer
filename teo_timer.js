@@ -27,6 +27,7 @@
 
   start = function() {
     this.startTime = new Date();
+    this.sound.load();
     this.timer = setInterval((function() {
       return step();
     }), 50);
@@ -56,7 +57,6 @@
     if (time < 10 * 1000) {
       $(document.body).addClass("blinking");
       if (this.sound.paused) {
-        this.sound.load();
         this.sound.play();
       }
     }

@@ -18,6 +18,7 @@ toggle = ->
 
 start = ->
   @startTime = new Date()
+  @sound.load()
   @timer = setInterval ( -> step() ), 50
   setColor("yellow")
 
@@ -42,7 +43,6 @@ step = ->
   if time < 10 * 1000
     $(document.body).addClass("blinking")
     if @sound.paused
-      @sound.load()
       @sound.play()
 
   second = Math.floor(time / 1000)
